@@ -8,9 +8,10 @@
   <meta property="og:title" content="Widerrufsbutton – EU-konformer Widerruf für Shopify" />
   <meta property="og:description" content="Erfülle die EU-Omnibus-Richtlinie mit nur einem Klick. DSGVO-konform, automatisiert." />
   <meta property="og:type" content="website" />
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="958e7aa2-2479-4d2c-a7f1-115487eb8290" data-blockingmode="auto" type="text/javascript"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" type="text/css" data-cookieconsent="preferences" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -602,69 +603,10 @@
   </div>
 </footer>
 
-<!-- Cookie Banner -->
-<div id="cookie-banner" style="
-  position: fixed;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 48px);
-  max-width: 600px;
-  background: rgba(20, 20, 20, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 16px;
-  padding: 20px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-  z-index: 9999;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
-">
-  <p style="font-size: 14px; color: rgba(255,255,255,0.75); margin: 0; flex: 1; min-width: 200px;">
-    Wir nutzen Google Fonts für die Darstellung. Durch die Nutzung dieser Seite stimmst du der Verwendung zu.
-  </p>
-  <div style="display: flex; gap: 10px; flex-shrink: 0;">
-    <button onclick="closeCookieBanner(false)" style="
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      border: 1px solid rgba(255,255,255,0.15);
-      background: transparent;
-      color: rgba(255,255,255,0.6);
-      font-family: inherit;
-    ">Ablehnen</button>
-    <button onclick="closeCookieBanner(true)" style="
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      background: #fff;
-      color: #000;
-      font-family: inherit;
-    ">Akzeptieren</button>
-  </div>
-</div>
+<script id="CookieDeclaration" src="https://consent.cookiebot.com/958e7aa2-2479-4d2c-a7f1-115487eb8290/cd.js" type="text/javascript" async></script>
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Cookie Banner
-  if (localStorage.getItem('cookieConsent')) {
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
-
-  function closeCookieBanner(accepted) {
-    localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'declined');
-    document.getElementById('cookie-banner').style.display = 'none';
-  }
 </script>
 
 </body>
