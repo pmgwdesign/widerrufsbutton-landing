@@ -597,15 +597,74 @@
   <div class="container footer-inner">
     <div>© <span id="year"></span> PMGW Design – Valentin Höll</div>
     <div class="footer-links">
-      <a href="https://widerrufsbutton-production-3e03.up.railway.app/privacy">Datenschutz</a>
-      <a href="https://widerrufsbutton-production-3e03.up.railway.app/avv">AVV</a>
-      <a href="mailto:hallo@pmgw.de">Kontakt</a>
+      <a href="mailto:valentin@pmgw.de">Kontakt</a>
     </div>
   </div>
 </footer>
 
+<!-- Cookie Banner -->
+<div id="cookie-banner" style="
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 48px);
+  max-width: 600px;
+  background: rgba(20, 20, 20, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  z-index: 9999;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.6);
+">
+  <p style="font-size: 14px; color: rgba(255,255,255,0.75); margin: 0; flex: 1; min-width: 200px;">
+    Wir nutzen Google Fonts für die Darstellung. Durch die Nutzung dieser Seite stimmst du der Verwendung zu.
+  </p>
+  <div style="display: flex; gap: 10px; flex-shrink: 0;">
+    <button onclick="closeCookieBanner(false)" style="
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      font-family: inherit;
+    ">Ablehnen</button>
+    <button onclick="closeCookieBanner(true)" style="
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: #fff;
+      color: #000;
+      font-family: inherit;
+    ">Akzeptieren</button>
+  </div>
+</div>
+
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Cookie Banner
+  if (localStorage.getItem('cookieConsent')) {
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
+
+  function closeCookieBanner(accepted) {
+    localStorage.setItem('cookieConsent', accepted ? 'accepted' : 'declined');
+    document.getElementById('cookie-banner').style.display = 'none';
+  }
 </script>
 
 </body>
