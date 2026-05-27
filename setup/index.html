@@ -566,8 +566,33 @@
     .footer-links a:hover { color: #fff; }
 
     @media(max-width:640px) {
-      section { padding: 70px 20px; }
-      .pkg-left, .pkg-right { padding: 28px 22px; }
+      section { padding: 56px 16px; }
+      .hero { padding: 80px 16px 60px; }
+      .hero h1 { font-size: clamp(32px, 8vw, 48px); letter-spacing: -0.03em; }
+      .hero-sub { font-size: 16px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-secondary { justify-content: center; padding: 14px 24px; font-size: 15px; }
+      .hero-checks { gap: 12px; font-size: 12px; }
+      .section-header h2 { font-size: clamp(24px, 6vw, 36px); }
+      .section-header p { font-size: 15px; }
+      .pkg-left, .pkg-right { padding: 24px 20px; }
+      .price-main { font-size: 56px; }
+      .price-main .currency { font-size: 26px; }
+      .btn-buy { font-size: 16px; padding: 16px 24px; }
+      .inc-list li { font-size: 14px; }
+      .faq-q { font-size: 14px; padding: 16px 18px; }
+      .faq-a { padding: 0 18px 16px; font-size: 13.5px; }
+      .cta-final { padding: 70px 16px; }
+      .cta-final h2 { font-size: clamp(26px, 6vw, 38px); }
+      .footer-inner { flex-direction: column; text-align: center; gap: 12px; }
+      .bestand h2 { font-size: clamp(22px, 5vw, 32px); }
+      .eyebrow { font-size: 10.5px; }
+      .bar { font-size: 12px; padding: 8px 16px; line-height: 1.5; }
+      .nav-inner { padding: 12px 16px; }
+      .logo { font-size: 15px; }
+      .logo-badge { display: none; }
+      .nav-cta { font-size: 13px; padding: 8px 14px; }
+      .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
     }
   </style>
 </head>
@@ -588,7 +613,7 @@
     </a>
     <div class="nav-btns">
       <a href="https://calendly.com/pmgwdesign/conversionrateoptimierung" target="_blank" class="nav-ghost">📞 Termin buchen</a>
-      <a href="#paket" class="nav-cta">Zum Paket ansehen</a>
+      <a href="#paket" class="nav-cta">Paket ansehen</a>
     </div>
   </div>
 </nav>
@@ -611,7 +636,7 @@
       professionelle Einrichtung + Grow Jahresplan, komplett von uns übernommen.
     </p>
     <div class="hero-actions">
-      <a class="btn-primary" href="#paket">Zum Paket →</a>
+      <a class="btn-primary" href="#paket">Paket ansehen →</a>
       <a class="btn-secondary" href="https://calendly.com/pmgwdesign/conversionrateoptimierung" target="_blank">📞 Erst kurz telefonieren</a>
     </div>
     <div class="hero-checks">
@@ -769,7 +794,7 @@
 
 <!-- ÜBER MICH -->
 <section style="background:#0a0a0a;padding:90px 24px;">
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;" class="about-grid">
     <div style="position:relative;">
       <!-- 👉 FOTO-URL hier eintragen -->
       <img src="https://onecdn.io/media/b0b903bd-5e17-4650-8c44-2b332d8b4b75/md2x" alt="Valentin Höll" style="width:100%;border-radius:20px;border:1px solid rgba(255,255,255,0.08);object-fit:cover;aspect-ratio:4/5;" />
@@ -826,7 +851,7 @@
     <h2>Bereit? Dann lass uns loslegen.</h2>
     <p>Direkt buchen oder kurz sprechen – beides geht. Ich freue mich auf dich.</p>
     <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-      <a class="btn-primary" href="#paket" style="font-size:17px;padding:17px 40px;">Zum Paket →</a>
+      <a class="btn-primary" href="#paket" style="font-size:17px;padding:17px 40px;">Paket ansehen →</a>
       <a class="btn-secondary" href="https://calendly.com/pmgwdesign/conversionrateoptimierung" target="_blank" style="font-size:17px;padding:17px 32px;">📞 Erst kurz telefonieren</a>
     </div>
     <p class="cta-meta">Telefontermin kostenlos · 15 Minuten · kein Druck</p>
