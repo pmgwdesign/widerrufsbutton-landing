@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup-Paket für Bestandskunden – Widerrufsbutton</title>
+  <meta name="description" content="Professionelle Einrichtung des EU-konformen Widerrufsbuttons für deinen Shopify-Shop – inkl. Grow Jahresplan. Einmalig 450 €, alles inklusive." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" type="text/css" data-cookieconsent="preferences" />
+  <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="958e7aa2-2479-4d2c-a7f1-115487eb8290" data-blockingmode="auto" type="text/javascript"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0a0a0a;
+      color: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── ANNOUNCEMENT BAR ── */
+    .bar {
+      background: linear-gradient(90deg, rgba(0,255,136,0.15), rgba(0,217,255,0.1), rgba(0,255,136,0.15));
+      border-bottom: 1px solid rgba(0,255,136,0.2);
+      color: rgba(255,255,255,0.9);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13.5px;
+      font-weight: 500;
+    }
+    .bar strong { color: #00ff88; }
+
+    /* ── NAV ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00ff88, #00d9ff);
+      box-shadow: 0 0 12px rgba(0, 255, 136, 0.6);
+    }
+    .logo-badge {
+      background: rgba(0,255,136,0.1);
+      color: #00ff88;
+      border: 1px solid rgba(0,255,136,0.2);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+    .nav-btns { display: flex; gap: 10px; align-items: center; }
+    .nav-ghost {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.15);
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    .nav-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.35); }
+    .nav-cta {
+      background: #00ff88;
+      color: #000 !important;
+      padding: 9px 20px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0,255,136,0.4); }
+    @media (max-width: 600px) { .nav-ghost { display: none; } }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 100px 24px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px; left: 50%;
+      transform: translateX(-50%);
+      width: 900px; height: 700px;
+      background: radial-gradient(circle, rgba(0,255,136,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 860px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(0,255,136,0.08);
+      border: 1px solid rgba(0,255,136,0.25);
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #00ff88;
+      margin-bottom: 28px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .hero-badge-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #00ff88;
+      box-shadow: 0 0 8px #00ff88;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      font-weight: 900;
+      line-height: 1.07;
+      letter-spacing: -0.04em;
+      margin-bottom: 20px;
+      background: linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.75) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero h1 .accent {
+      background: linear-gradient(135deg, #00ff88 0%, #00d9ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-sub {
+      font-size: 18px;
+      color: rgba(255,255,255,0.65);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.75;
+    }
+    .hero-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 40px; }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #00ff88;
+      color: #000;
+      padding: 16px 36px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 36px rgba(0,255,136,0.45); background: #00e87a; }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: #fff;
+      padding: 16px 28px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.4); }
+    .hero-checks {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+    }
+    .hero-checks span::before { content: "✓ "; color: #00ff88; font-weight: 700; }
+
+    /* ── SECTION BASE ── */
+    section { padding: 90px 24px; }
+    .section-header { text-align: center; max-width: 680px; margin: 0 auto 56px; }
+    .eyebrow {
+      display: inline-block;
+      padding: 4px 12px;
+      background: rgba(0,255,136,0.08);
+      border: 1px solid rgba(0,255,136,0.2);
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #00ff88;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .section-header h2 {
+      font-size: clamp(28px, 4.5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+    .section-header p { font-size: 17px; color: rgba(255,255,255,0.6); line-height: 1.75; }
+
+    /* ── FEATURES ── */
+    .features { background: #0f0f0f; }
+    .feat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    @media(max-width:768px){ .feat-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width:520px){ .feat-grid { grid-template-columns: 1fr; } }
+    .feat-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 28px 24px;
+      transition: all 0.3s;
+    }
+    .feat-card:hover { border-color: rgba(0,255,136,0.3); transform: translateY(-4px); }
+    .feat-icon { font-size: 26px; margin-bottom: 14px; display: block; }
+    .feat-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+    .feat-card p { font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+    /* ── BESTANDSKUNDEN BANNER ── */
+    .bestand { background: rgba(0,255,136,0.03); border-top: 1px solid rgba(0,255,136,0.1); border-bottom: 1px solid rgba(0,255,136,0.1); }
+    .bestand-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    @media(max-width:768px){ .bestand-grid { grid-template-columns: 1fr; gap: 36px; } }
+    .bestand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255,210,0,0.08);
+      border: 1px solid rgba(255,210,0,0.2);
+      color: #ffd200;
+      border-radius: 999px;
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+    .bestand h2 {
+      font-size: clamp(24px, 3.5vw, 38px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+    .bestand p { font-size: 16px; color: rgba(255,255,255,0.6); line-height: 1.75; }
+    .bestand-cards { display: flex; flex-direction: column; gap: 14px; }
+    .bestand-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 14px;
+      padding: 20px 22px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      transition: border-color 0.2s;
+    }
+    .bestand-card:hover { border-color: rgba(0,255,136,0.2); }
+    .bestand-card-icon { font-size: 22px; flex-shrink: 0; }
+    .bestand-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+    .bestand-card p { font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    /* ── STEPS ── */
+    .steps { background: #0a0a0a; }
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+      margin-top: 56px;
+    }
+    @media(max-width:640px){ .steps-row { grid-template-columns: 1fr; gap: 32px; } }
+    .steps-row::before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: calc(16.66% + 16px);
+      right: calc(16.66% + 16px);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0,255,136,0.4), rgba(0,217,255,0.4));
+    }
+    @media(max-width:640px){ .steps-row::before { display: none; } }
+    .step { text-align: center; padding: 0 24px; position: relative; z-index: 1; }
+    .step-num {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, #00ff88, #00d9ff);
+      color: #000;
+      font-weight: 900;
+      font-size: 18px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      border: 3px solid #0a0a0a;
+      box-shadow: 0 0 0 1px rgba(0,255,136,0.5), 0 0 20px rgba(0,255,136,0.2);
+    }
+    .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.6; }
+
+    /* ── PACKAGE ── */
+    .pkg { background: #0a0a0a; }
+    .pkg-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid rgba(0,255,136,0.2);
+      border-radius: 24px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      margin-top: 48px;
+      box-shadow: 0 0 80px rgba(0,255,136,0.06);
+    }
+    @media(max-width:700px){ .pkg-card { grid-template-columns: 1fr; } }
+    .pkg-left {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    @media(max-width:700px){ .pkg-left { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.06); padding: 36px 28px; } }
+    .pkg-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #00ff88;
+      margin-bottom: 8px;
+    }
+    .pkg-title {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 10px;
+    }
+    .pkg-desc { font-size: 14px; color: rgba(255,255,255,0.55); line-height: 1.65; }
+    .price-main {
+      font-size: 72px;
+      font-weight: 900;
+      color: #00ff88;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+    .price-main .currency { font-size: 34px; letter-spacing: 0; }
+    .price-note { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 6px; }
+    .price-compare { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 4px; }
+    .price-compare s { color: rgba(255,255,255,0.25); }
+    .btn-buy {
+      display: block;
+      text-align: center;
+      background: linear-gradient(135deg, #00ff88, #00d9ff);
+      color: #000;
+      padding: 18px 32px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 17px;
+      transition: all 0.2s;
+      box-shadow: 0 8px 32px rgba(0,255,136,0.35);
+    }
+    .btn-buy:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(0,255,136,0.5); }
+    .buy-meta {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.25);
+      font-size: 12px;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+    }
+    .btn-outline {
+      display: block;
+      text-align: center;
+      background: transparent;
+      color: rgba(255,255,255,0.7);
+      padding: 14px 32px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 15px;
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.2s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.06); color: #fff; border-color: rgba(255,255,255,0.3); }
+    .pkg-right { padding: 48px 44px; }
+    @media(max-width:700px){ .pkg-right { padding: 36px 28px; } }
+    .pkg-right h3 {
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 28px;
+    }
+    .inc-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+    .inc-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.5;
+    }
+    .chk {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      background: rgba(0,255,136,0.1);
+      border: 1px solid rgba(0,255,136,0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00ff88;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+    .inc-list strong { color: #fff; font-weight: 700; }
+    .inc-sub { font-size: 13px; color: rgba(255,255,255,0.4); display: block; margin-top: 2px; }
+
+    /* ── LEGAL ── */
+    .legal { background: rgba(0,255,136,0.03); border-top: 1px solid rgba(0,255,136,0.08); border-bottom: 1px solid rgba(0,255,136,0.08); }
+    .legal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 44px;
+    }
+    .legal-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-left: 3px solid #00ff88;
+      border-radius: 14px;
+      padding: 24px 22px;
+    }
+    .legal-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+    .legal-card p { font-size: 13.5px; color: rgba(255,255,255,0.55); line-height: 1.65; }
+
+    /* ── FAQ ── */
+    .faq { background: #0a0a0a; }
+    .faq-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+    .faq-row { border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .faq-row:last-child { border-bottom: none; }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 20px 24px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: background 0.15s;
+    }
+    .faq-q:hover { background: rgba(255,255,255,0.02); }
+    .faq-arr { color: #00ff88; font-size: 18px; transition: transform 0.2s; flex-shrink: 0; }
+    .faq-a {
+      display: none;
+      padding: 0 24px 20px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.75;
+    }
+    .faq-row.open .faq-a { display: block; }
+    .faq-row.open .faq-arr { transform: rotate(180deg); }
+
+    /* ── FINAL CTA ── */
+    .cta-final {
+      text-align: center;
+      padding: 100px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(0,255,136,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-final h2 {
+      font-size: clamp(30px, 5vw, 52px);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .cta-final p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .cta-meta { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.3); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid rgba(255,255,255,0.07);
+      padding: 36px 24px;
+      color: rgba(255,255,255,0.4);
+      font-size: 13px;
+    }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; max-width: 1100px; margin: 0 auto; }
+    .footer-links { display: flex; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+
+    @media(max-width:640px) {
+      section { padding: 70px 20px; }
+      .pkg-left, .pkg-right { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- BAR -->
+<div class="bar">
+  👋 <strong>Nur für Bestandskunden von PMGW Design</strong> – Einrichtung + Grow Jahresplan zum Einführungspreis von 450 €
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="https://widerrufs-button.com" class="logo">
+      <span class="logo-dot"></span>
+      Widerrufsbutton
+      <span class="logo-badge">für Shopify</span>
+    </a>
+    <div class="nav-btns">
+      <a href="https://calendly.com/pmgwdesign/conversionrateoptimierung" target="_blank" class="nav-ghost">📞 Termin buchen</a>
+      <a href="#paket" class="nav-cta">Paket sichern – 450 €</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      Exklusiv für PMGW Design Bestandskunden
+    </div>
+    <h1>
+      Dein Widerrufsbutton –<br/>
+      von uns eingerichtet.<br/>
+      <span class="accent">Du musst nichts tun.</span>
+    </h1>
+    <p class="hero-sub">
+      Als Bestandskunde kennst du unsere Qualität bereits. Jetzt holen wir das Maximum raus –
+      professionelle Einrichtung + Grow Jahresplan, komplett von uns übernommen.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#paket">Paket direkt sichern – 450 € →</a>
+      <a class="btn-secondary" href="https://calendly.com/pmgwdesign/conversionrateoptimierung" target="_blank">📞 Erst kurz telefonieren</a>
+    </div>
+    <div class="hero-checks">
+      <span>Nur für Bestandskunden</span>
+      <span>Einmalig zahlen, wir richten ein</span>
+      <span>12 Monate Grow inklusive</span>
+      <span>DSGVO & AVV inklusive</span>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">App Features</span>
+      <h2>Alles für gesetzeskonforme Widerrufe.</h2>
+      <p>Vom Button im Kundenkonto bis zur automatischen Bearbeitung – und das alles professionell von uns eingerichtet.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card"><span class="feat-icon">⚡</span><h3>Ein-Klick-Widerruf</h3><p>Kunden finden den Button im Kundenkonto und können ihren Widerruf in Sekunden einreichen.</p></div>
+      <div class="feat-card"><span class="feat-icon">📧</span><h3>Automatische E-Mails</h3><p>Sofortige Bestätigungs-E-Mail an den Kunden mit allen Widerrufsdetails – direkt nach Einreichung.</p></div>
+      <div class="feat-card"><span class="feat-icon">📊</span><h3>Dashboard</h3><p>Alle Widerrufe auf einen Blick. Status verwalten, exportieren, bearbeiten.</p></div>
+      <div class="feat-card"><span class="feat-icon">🛡️</span><h3>DSGVO-konform</h3><p>EU-Server, Auftragsverarbeitungsvertrag (AVV), alle Compliance-Webhooks. Sicher per Default.</p></div>
+      <div class="feat-card"><span class="feat-icon">🎨</span><h3>Eigenes Branding</h3><p>Button-Farben, Texte und Position auf dein Shop-Design abgestimmt – wir übernehmen das.</p></div>
+      <div class="feat-card"><span class="feat-icon">🔄</span><h3>Shopify Returns Sync</h3><p>Automatische Synchronisation mit Shopify Returns. Kein doppelter Aufwand.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BESTANDSKUNDEN SECTION -->
+<section class="bestand">
+  <div class="container">
+    <div class="bestand-grid">
+      <div>
+        <div class="bestand-badge">⭐ Nur für Bestandskunden</div>
+        <h2>Du kennst uns bereits –<br/>deshalb bekommst du mehr.</h2>
+        <p>Als Bestandskunde von PMGW Design bekommst du dieses Paket zu einem Preis, der so kein zweites Mal kommt. Wir kennen deinen Shop, wissen was du brauchst – und richten alles in kürzester Zeit ein.</p>
+      </div>
+      <div class="bestand-cards">
+        <div class="bestand-card">
+          <span class="bestand-card-icon">🤝</span>
+          <div><h3>Persönliche Betreuung</h3><p>Ich persönlich kümmere mich um die Einrichtung – kein anonymes Support-Ticket.</p></div>
+        </div>
+        <div class="bestand-card">
+          <span class="bestand-card-icon">⚡</span>
+          <div><h3>Schnelle Umsetzung</h3><p>Dein Widerrufsbutton ist in der Regel innerhalb von 48 Stunden live.</p></div>
+        </div>
+        <div class="bestand-card">
+          <span class="bestand-card-icon">💬</span>
+          <div><h3>Fragen? Einfach anrufen.</h3><p>Nicht sicher ob das Paket passt? Buch dir 15 Minuten – ich erkläre alles.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps" id="ablauf">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">So läuft es ab</span>
+      <h2>In 3 Schritten zur<br/>rechtssicheren Lösung.</h2>
+      <p>Du musst dich um nichts kümmern – wir übernehmen die komplette Einrichtung.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Paket buchen</h3>
+        <p>Einmalig 450 € – Sofortbestätigung per E-Mail, sichere Zahlung.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Kurzes Onboarding</h3>
+        <p>Wir melden uns innerhalb von 1–2 Werktagen. Kurzer Shopify-Zugang, fertig.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Live & rechtssicher</h3>
+        <p>Wir richten ein, testen und du bekommst Bestätigung. Dein Button ist aktiv.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGE -->
+<section class="pkg" id="paket">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Das Paket</span>
+      <h2>Einmal zahlen. 12 Monate sicher.</h2>
+      <p>Setup & Grow Jahresplan kombiniert – alles aus einer Hand, kein technisches Wissen nötig.</p>
+    </div>
+    <div class="pkg-card">
+      <div class="pkg-left">
+        <div>
+          <div class="pkg-label">Setup + Grow Jahresplan</div>
+          <div class="pkg-title">Professionelle Einrichtung<br/>inkl. 12-Monats-Lizenz</div>
+          <p class="pkg-desc">Wir installieren und konfigurieren den Widerrufsbutton komplett für dich – mit allen Grow-Features und voller DSGVO-Compliance.</p>
+        </div>
+        <div>
+          <div class="price-main"><span class="currency">€</span>450</div>
+          <div class="price-note">einmalig · zzgl. gesetzlicher MwSt.</div>
+          <div class="price-compare">inkl. Grow-Jahresplan <s>(sonst $359,88/Jahr)</s> + Einrichtung</div>
+        </div>
+        <div>
+          <!-- 👉 Stripe-Link hier einfügen: href="https://buy.stripe.com/DEIN_LINK" -->
+          <a class="btn-buy" href="#" id="checkout-btn">Jetzt buchen &amp; bezahlen →</a>
+          <div class="buy-meta">
+            <span>🔒 Sichere Zahlung</span>
+            <span>📄 Rechnung inklusive</span>
+            <span>✉️ Sofortbestätigung</span>
+          </div>
+          <div class="divider" style="margin: 20px 0 14px;">oder lieber erst sprechen?</div>
+          <a class="btn-outline" href="https://calendly.com/pmgwdesign/conversionrateoptimierung" target="_blank">📞 15 Min. Telefontermin buchen</a>
+          <p style="text-align:center;font-size:12px;color:rgba(255,255,255,0.25);margin-top:10px;">Kostenlos · Kein Verkaufsgespräch · Einfach klären</p>
+        </div>
+      </div>
+      <div class="pkg-right">
+        <h3>Im Paket enthalten</h3>
+        <ul class="inc-list">
+          <li><span class="chk">✓</span><div><strong>Professionelle Einrichtung</strong><span class="inc-sub">Vollständige Installation im Shopify-Theme – kein Setup-Stress für dich</span></div></li>
+          <li><span class="chk">✓</span><div><strong>Grow-Plan für 12 Monate</strong><span class="inc-sub">Alle Premium-Features: Returns Sync, individuelles Branding, einstellbare Widerrufsbedingungen</span></div></li>
+          <li><span class="chk">✓</span><div><strong>Auftragsverarbeitungsvertrag (AVV)</strong><span class="inc-sub">DSGVO-konform, EU-Server, alle Compliance-Webhooks</span></div></li>
+          <li><span class="chk">✓</span><div><strong>Branding-Anpassung</strong><span class="inc-sub">Button-Farben, Texte und Position auf dein Shop-Design abgestimmt</span></div></li>
+          <li><span class="chk">✓</span><div><strong>Shopify Returns Sync</strong><span class="inc-sub">Automatische Synchronisation mit Shopify Returns – keine Doppelarbeit</span></div></li>
+          <li><span class="chk">✓</span><div><strong>Test & Abnahme</strong><span class="inc-sub">Wir prüfen alles vor der Freigabe – du bekommst eine Bestätigung</span></div></li>
+          <li><span class="chk">✓</span><div><strong>E-Mail-Support</strong><span class="inc-sub">Bei Fragen sind wir für dich da – schnelle Antworten garantiert</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEGAL -->
+<section class="legal">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Rechtlicher Hintergrund</span>
+      <h2>Warum der Widerrufsbutton Pflicht ist.</h2>
+      <p>Seit dem 28. Mai 2022 verpflichtet die EU-Omnibus-Richtlinie alle Online-Händler, ihren Kunden einen leicht zugänglichen Widerrufsbutton bereitzustellen.</p>
+    </div>
+    <div class="legal-grid">
+      <div class="legal-card"><h3>EU-Omnibus-Richtlinie</h3><p>Seit 28. Mai 2022 Pflicht für alle Online-Händler in der EU. Verstöße können mit Abmahnungen und Bußgeldern geahndet werden.</p></div>
+      <div class="legal-card"><h3>14-tägiges Widerrufsrecht</h3><p>Verbraucher haben ein gesetzliches Widerrufsrecht. Die korrekte digitale Implementierung ist keine Kür, sondern gesetzliche Pflicht.</p></div>
+      <div class="legal-card"><h3>Abmahn-Risiko minimieren</h3><p>Falsch umgesetzte Widerrufsbelehrungen sind ein Hauptangriffspunkt für Abmahnungen. Professionelle Lösung schützt dich effektiv.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">FAQ</span>
+      <h2>Alles was du wissen musst.</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-row">
+        <button class="faq-q" onclick="toggleFaq(this)">Was passiert nach der Buchung?<span class="faq-arr">▾</span></button>
+        <div class="faq-a">Du erhältst sofort eine Bestätigungs-E-Mail mit Rechnung. Wir melden uns innerhalb von 1–2 Werktagen, koordinieren kurz den Shopify-Zugang und richten alles ein.</div>
+      </div>
+      <div class="faq-row">
+        <button class="faq-q" onclick="toggleFaq(this)">Brauche ich technische Kenntnisse?<span class="faq-arr">▾</span></button>
+        <div class="faq-a">Nein. Wir übernehmen die komplette Installation. Du musst uns nur kurz temporären Zugriff auf deinen Shopify-Shop gewähren – das ist jederzeit widerrufbar.</div>
+      </div>
+      <div class="faq-row">
+        <button class="faq-q" onclick="toggleFaq(this)">Funktioniert die App mit meinem Theme?<span class="faq-arr">▾</span></button>
+        <div class="faq-a">Die App funktioniert mit allen Online Store 2.0 Themes. Bei Custom Themes prüfen wir vorab kostenlos die Kompatibilität.</div>
+      </div>
+      <div class="faq-row">
+        <button class="faq-q" onclick="toggleFaq(this)">Was ist nach den 12 Monaten?<span class="faq-arr">▾</span></button>
+        <div class="faq-a">Wir informieren dich rechtzeitig vor Ablauf. Du kannst den Grow-Plan dann eigenständig über den Shopify App Store verlängern.</div>
+      </div>
+      <div class="faq-row">
+        <button class="faq-q" onclick="toggleFaq(this)">Welche Zahlungsmethoden werden akzeptiert?<span class="faq-arr">▾</span></button>
+        <div class="faq-a">Kreditkarte, SEPA-Überweisung und SEPA-Lastschrift. Du erhältst nach der Zahlung automatisch eine steuerliche Rechnung per E-Mail.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-final">
+  <div class="container">
+    <h2>Bereit? Dann lass uns loslegen.</h2>
+    <p>Direkt buchen oder kurz sprechen – beides geht. Ich freue mich auf dich.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
+      <a class="btn-primary" href="#paket" style="font-size:17px;padding:17px 40px;">Paket direkt sichern – 450 € →</a>
+      <a class="btn-secondary" href="https://calendly.com/pmgwdesign/conversionrateoptimierung" target="_blank" style="font-size:17px;padding:17px 32px;">📞 Erst kurz telefonieren</a>
+    </div>
+    <p class="cta-meta">Telefontermin kostenlos · 15 Minuten · kein Druck</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>© <span id="year"></span> PMGW Design – Valentin Höll · Alle Preise zzgl. MwSt.</div>
+    <div class="footer-links">
+      <a href="mailto:valentin@pmgw.de">Kontakt</a>
+      <a href="https://widerrufs-button.com">App-Website</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  function toggleFaq(btn) {
+    const row = btn.closest('.faq-row');
+    const isOpen = row.classList.contains('open');
+    document.querySelectorAll('.faq-row.open').forEach(r => r.classList.remove('open'));
+    if (!isOpen) row.classList.add('open');
+  }
+
+  // Smooth scroll für Anker-Links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      if (id === '#') return;
+      const target = document.querySelector(id);
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  // 👉 Zahlungslink aktivieren: Kommentiere ein und ersetze URL:
+  // document.getElementById('checkout-btn').href = 'https://buy.stripe.com/DEIN_LINK';
+</script>
+</body>
+</html>
